@@ -1,4 +1,4 @@
-#CS132 Project
+CS132 Project
 
 ### Version Info:
 ```bash
