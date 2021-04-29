@@ -1,0 +1,32 @@
+{% extends "mypage/base.html" %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div style="display:block; height:auto; width:100%; margin-top:25px;">
+  <div style="border-radius:10px; padding:15px; background-color:lightgray; color: black; width:80%; height:70px;">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <h2 style="margin-left:45%; margin-top:-4px;">Welcome, <strong> {{request.user}}</strong>!</h2>
+  </div>
+
+  <div class="list1" style="margin-top:10px;">
+      <ul>
+          <li><h4>Assignment #0</h4></li>
+          <li><h4>Homework #1 - Classes and Inheritance</h4></li>
+          <li><h4>Homework #2 - Doubly Linked Lists, Dictionaries and Sets</h4></li>
+          <li><h4>GROUP PROJECT - First Document</h4></li>
+          <li><h4>MAZES!!!!!!!!</h4></li>
+          <li><h4>Prettiest Maze Contest</h4></li>
+          <li><h4>Sorting and Searching </h4></li>
+          <li><h4>Half Way Quiz </h4></li>
+          <li><h4>Tree Method </h4></li>
+          <li><h4>Final EXAM Options </h4></li>
+          <li><h4>THE FINAL ASSIGNMENT - GRAPHS!!!!! </h4></li>
+          <li><h4>Graphs </h4></li>
+          <li><h4>Final Submission </h4></li>
+          <li><h4>Self and Group Evaluations</h4></li>
+      </ul>
+  </div>
+</div>
+{% endblock %}

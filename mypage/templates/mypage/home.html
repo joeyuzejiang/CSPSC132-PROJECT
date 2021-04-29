@@ -1,0 +1,27 @@
+{% extends "mypage/base.html" %}
+
+{% block script %}
+<style>
+  .button {padding:15px 32px; text-align:center; text-decoration:none; display: inline-block;
+         font-size:15px; cursor:pointer; margin-right:8px; border-radius:12px;}
+  .button1 {border:none; background-color:#bcccd8;}
+  .button2 {border:1px solid #bcccd8; background-color:white;}
+  .button:hover {background-color:#808080; color:white; transition:all .5s;}
+</style>
+{% endblock %}
+
+{% block content %}
+<div style="display:block; height:450px; width:100%; margin-top:25px;">
+  <div style="margin-top:150px;">
+    <h3 style="font-weight:bold;">This course builds upon the founcations <br>
+    of programming and computation by introducing and studying <br>
+    the data structures and programming language features.</h3>
+    <h4>Support the design and condtruction of large scale software systems.</h4><br>
+    <a href="login"><button class="button button1">Login Now</button></a>
+    <a href=""><button class="button button2" onclick="javascript:ShowContent()">Learn More</button></a>
+    <div style="margin-top:-265px; margin-left:750px;">
+      <img src="static/img/background.jpg" width="500px" height="350px">
+    </div>
+  </div>
+</div>
+{% endblock %}

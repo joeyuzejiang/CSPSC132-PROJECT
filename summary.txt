@@ -1,0 +1,13 @@
+Author: Yuze Jiang
+Project: Django Project
+Course: CS132
+
+For the CS132 Project, I made the decision to let me approach to Django, is a great python-based open source web frame work. As I am a beginner to Django, I start with the basic functions, including setting the relations between pages, login & logout page, as well as finishing some of my favorite CSS styles.
+
+Looking at the top of the home page (localhost:8000), you are able to find three buttons. The Home button will bring you back to the home screen no matter which page you are on, the Canvas will bring you to the Canvas page for this course, and the Login button will bring you to the Login page. 
+
+The home page has a clean design (because I don’t really know what to add). I spend a long time learn to do the mouse-hover animation and to change the shape of buttons. During the process, I have a better understanding about the “display” element in <style>, as I have used display:block, flex, inline-block for different uses in this project. The Learn more button does not do anything now. 
+
+After clicking the login page, if not having an account, people are able to use register button to take themselves into the register page. They will be brought back to the login page again after being registered. The nav bar will change after logging in. A project button appears, and the original login is replaced with logout. People can use {username:test, password:test} to quick access the page. There is not much styling on the login and register page as I have’t got a proper design idea yet.
+
+The project included many Django features, including {{}}, {%%}, and it’s own form, redirect, and authenticate functions. It set a nice basis for me to approach to similar website projects or if I want to learn deeper about Django such as Django-channels or having more expansion packs included in the future. 

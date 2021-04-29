@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CS132Project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700" rel="stylesheet" type="text/css"/>
+
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family:"Lato",sans-serif;}
+        .w3-bar,button {font-family:"Montserrat",sans-serif;}
+
+        .navbar-brand1 div {position:absolute; margin-top:5px; margin-left:75px;}
+        nav {width:100%; overflow:auto; background:white; height:85px; margin-top:0px;}
+        .navlist {float:right; margin-top:0px;}
+
+        .intro div {margin-left:75px;}
+
+        nav a {width:auto; display:block; padding:20px 15px; font-family:Lato;
+          text-decoration:none; color:black; text-align:center; font-weight:normal; margin-right:100px;
+          margin-top:0px; cursor: pointer;}
+        nav a {border-bottom:3px solid; padding-bottom:2px; border-bottom-color:transparent;}
+        nav a:hover {border-bottom-color:#2a61b9; transition:all 1s;}
+        ul {padding:0; margin:0 0 0 150px; list-style:none;}
+
+
+        .follow-us {background:#fbfbfb; height:80px; float:left; width:100%; text-align:center;}
+        .follow-us a {text-decoration:none; padding:20px;}
+        .follow-us-text {font-weight:normal; display:block; margin-left:-4px; margin-right:20px; color:#5f6464;}
+        #facebook:hover {color:#4267B2;}
+        #instagram:hover {color:#E1306C;}
+        #youtube:hover {color:#FF0000;}
+        #twitter:hover {color:#1DA1F2}
+        #linkedin:hover {color:#0E76A8;}
+        .icon {color:#5f6464; display:inline-block; font:normal normal normal 14px/1 FontAwesome;
+          font-size:20px; text-rendering:auto; -webkit-font-smoothing:antialiased;
+          -moz-osx-font-smoothing:grayscale;}
+
+        .contact-us {background:#fbfbfb; height:270px;}
+        .contact-us-text {font-weight:normal; display:block; margin-left:0px; color:#5f6464;}
+        .contact-us-text tr h4,h5 {font-weight:normal; display:block; margin-left:0px; color:#5f6464;}
+        .about-us-text {font-weight:normal; display:block; margin-top:18px; color:#5f6464;}
+
+        .closebtn {margin-left:15px;color:black;font-weight:bold;float:right;font-size:22px;line-height:35px;cursor:pointer;transition: 0.3s;}
+        .closebtn:hover {color:white;}
+
+        .list1 ul {counter-reset:index;padding:0;}
+        .list1 li {counter-increment:index;display:flex;align-items;center;padding: 12px 0;box-sizing: border-box;}
+        .list1 li::before {content:counters(index,".",decimal-leading-zero);font-size:1.5rem;text-align:right;font-weight:bold;
+          min-width:50px;padding-right:12px;font-variant-numeric:tabular-nums;align-self:flex-start;background-image:linear-gradient(to bottom,aquamarine,orangered);
+          background-attachment:fixed;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .list1 li+li {border-top: 1px solid #0E76A8; margin-top:-5px; max-width:850px;}
+        .list1 h4 {margin-left:20px;margin-top:-1px;}
+    </style>
+    {% block script %}
+    {% endblock %}
+</head>
+
+<body>
+    <!-- top -->
+    <div class="Navbar">
+        <div class="navbar-brand1">
+            <a>
+                <div width="150px">
+                    <h1 style="color:#2a61b9;">CS132</h1>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <ul>
+
+                <li class="navlist"><h5>
+                  {% if request.user.is_active %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                  {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                  {% endif %}
+                </h5></li>
+                {% if request.user.is_active %}
+                  <li class="navlist"><h5><a href="{% url 'project' %}"> Project</a></h5></li>
+                {% endif %}
+                <li class="navlist"><h5><a href="https://psu.instructure.com/courses/2107289">Canvas</a></h5></li>
+                <li class="navlist"><h5><a href="{% url 'home' %}">Home</a></h5></li>
+            </ul>
+        </nav>
+    </div>
+
+    <hr style="width:auto; margin-left:auto; margin-right:auto; height:1px; margin-bottom:0px; margin-top:0px;
+      background-color:#f2f3f5;">
+
+    <div class="intro">
+        <a>
+            {% block content %}
+            {% endblock %}
+        </a>
+    </div>
+
+    <hr style="width:auto; margin-left:auto; margin-right:auto; height:1px; margin-bottom:0px;
+      background-color:#f2f3f5;">
+
+    <!-- follow us -->
+    <div class="follow-us">
+        <table style="margin-top:8px; margin-left:85px;">
+            <td><h4 class="follow-us-text">Follow Us</h4></td>
+            <td><a class="icon fa-facebook-official" id="facebook" href="https://www.facebook.com/"></a></td>
+            <td><a class="icon fa-instagram" id="instagram" href="https://www.instagram.com/"></a></td>
+            <td><a class="icon fa-youtube" id="youtube" href="https://www.youtube.com/"></a></td>
+            <td><a class="icon fa-twitter" id="twitter" href="https://twitter.com/"></a></td>
+            <td><a class="icon fa-linkedin" id="linkedin" href="https://www.linkedin.com/"></a></td>
+        </table>
+    </div>
+
+    <hr style="width:auto; margin-left:auto; margin-right:auto; height:61px; margin-bottom:0px;
+      background-color:#f2f3f5;">
+
+    <!-- Footer -->
+    <div class="contact-us">
+        <div class="w3-third" style="width:25%;margin-top:8px; margin-left:85px;">
+            <table class="contact-us-text">
+                <tr><h4 class="contact-us-text">Contact the Professor</h4></tr>
+                <tr><h5><p>
+                    Dr. Nate Wagenhoffer
+                    <br/>
+                    Office Hrs: Tues & Th 10a-2p
+                </p></h5></tr>
+                <tr><h5><p>
+                    Mail:
+                    <a href="mailto:wagenhoffer@psu.edu">wagenhoffer@psu.edu</a>
+                </p></h5></tr>
+            </table>
+        </div>
+
+
+        <div class="w3-third" style="width:25%;">
+            <table class="about-us-text">
+                <tr><h4 class="about-us-text">About CS132</h4></tr>
+                <tr><h5><p>
+                    Prereq: CMPSC 121, 131
+                    <br/>
+                    Date: MWF
+                </p></h5></tr>
+                <tr><h5><p>
+                    Meeting Time: 3:35PM-4:25PM
+                    <br/>
+                    Location: Zoom
+                </p></h5></tr>
+            </table>
+        </div>
+
+        <div class="w3-third">
+            <h1 style="color:#2a61b9; display:block; margin-top:100px; margin-left:180px;">Data Structure</h1>
+        </div>
+
+    </div>
+
+</body>
+</html>
